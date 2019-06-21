@@ -59,7 +59,7 @@ resource "azurerm_virtual_machine" "vm-linux" {
   }
 
   os_profile {
-    computer_name  = "${var.vm_hostname}${count.index}"
+    computer_name  = "${var.vm_hostname}${count.index}.${var.domain_name}"
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
     custom_data    = "${var.custom_data}"
@@ -116,7 +116,7 @@ resource "azurerm_virtual_machine" "vm-linux-with-datadisk" {
   }
 
   os_profile {
-    computer_name  = "${var.vm_hostname}${count.index}"
+    computer_name  = "${var.vm_hostname}${count.index}.${var.domain_name}"
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
     custom_data    = "${var.custom_data}"
@@ -165,7 +165,7 @@ resource "azurerm_virtual_machine" "vm-windows" {
   }
 
   os_profile {
-    computer_name  = "${var.vm_hostname}${count.index}"
+    computer_name  = "${var.vm_hostname}${count.index}.${var.domain_name}"
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
   }
@@ -216,7 +216,7 @@ resource "azurerm_virtual_machine" "vm-windows-with-datadisk" {
   }
 
   os_profile {
-    computer_name  = "${var.vm_hostname}${count.index}"
+    computer_name  = "${var.vm_hostname}${count.index}.${var.domain_name}"
     admin_username = "${var.admin_username}"
     admin_password = "${var.admin_password}"
   }

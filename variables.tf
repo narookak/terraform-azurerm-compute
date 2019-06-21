@@ -151,3 +151,7 @@ variable "enable_accelerated_networking" {
   description = "(Optional) Enable accelerated networking on Network interface"
   default     = "false"
 }
+
+variable "domain_name" {
+  default = "local.int"
+}
